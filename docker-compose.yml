@@ -1,5 +1,4 @@
-#docker-compose file version
-version: '3' 
+version: '3'  #docker-compose file version
 services:
   scm:    
     image: scmmanager/scm-manager:2.12.0

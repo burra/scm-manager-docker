@@ -1,12 +1,11 @@
-version: '2.0'
+#docker-compose file version
+version: '3' 
 services:
-  scm:
-    image: scmmanager/scm-manager:<version>
-    ports:
-    - "8080:8080"
-    # if the ssh plugin is used
-    - "2222:2222"
+  scm:    
+    image: scmmanager/scm-manager:2.12.0
+    container_name: scmmanager
+    ports:    
+    - 8080:8080    # if the ssh plugin is used    
+    - 2222:2222 
     volumes:
-    - scmhome:/var/lib/scm
-volumes:
-  scmhome: {}
+    - ./docker/scm_home:/var/lib/scm #user of folder shall be same as java user    
